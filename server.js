@@ -14,6 +14,11 @@ const init = async () => {
     //     console.log(`${key}: ${value}`);
     // }
 
+    const info = new server.info();
+
+    info.setPath('/dudu/');
+    info.setPort('80');
+
     await server.start();
     console.log('Server running on %s', server.info.uri);
 
