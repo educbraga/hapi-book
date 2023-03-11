@@ -9,11 +9,10 @@ const init = async () => {
         host: 'localhost'
     });
 
-    console.log('What does server have to offer?');
-
-        for(let [key, value] of Object.entries(server)) {
-            console.log(`${key}: ${value}`);
-        }
+    // console.log('What does server have to offer?');
+    // for(let [key, value] of Object.entries(server)) {
+    //     console.log(`${key}: ${value}`);
+    // }
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
