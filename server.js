@@ -9,6 +9,9 @@ const init = async () => {
         host: 'localhost'
     });
 
+    await server.start();
+    console.log('Server running on %s', server.info.uri);
+
     server.route({
         method: 'GET',
         path: '/home',
@@ -18,8 +21,15 @@ const init = async () => {
         }
     });
 
-    await server.start();
-    console.log('Server running on %s', server.info.uri);
+    server.route({
+        method: 'GET',
+        path: '/home/{name}',
+        handler: (request, h) => {
+
+            return `Hello ${request.params.name}!`;
+        }
+    });
+
 };
 
 process.on('unhandledRejection', (err) => {
