@@ -2,7 +2,7 @@
   "name": "hapi-auth-db",
   "version": "1.0.0",
   "description": "An hapi example with Validation, Authentication and Plugins.",
-  "main": "serve.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
