@@ -1,0 +1,22 @@
+{
+  "name": "hapi-book",
+  "version": "1.0.0",
+  "description": "Practical hapi - Build Your Own hapi Apps and Learn from Industry Case Studies by Kanika Sud",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/educbraga/hapi-book.git"
+  },
+  "author": "Eduardo Braga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/educbraga/hapi-book/issues"
+  },
+  "homepage": "https://github.com/educbraga/hapi-book#readme",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.0"
+  }
+}
