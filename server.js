@@ -11,10 +11,10 @@ const init = async () => {
 
     server.route({
         method: 'GET',
-        path: '/',
+        path: '/home',
         handler: (request, h) => {
 
-            return 'Hello World!';
+            return '<h3>Hello Edu!<h3>';
         }
     });
 
