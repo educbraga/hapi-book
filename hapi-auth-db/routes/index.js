@@ -29,12 +29,10 @@ exports.configureRoutes = async (server) => {
             path: '/home/create/travel',
             config: {
                 validate: {
-                    payload: Joi.object(
-                        {
-                            from: Joi.date().min('now').required,
-                            to: Joi.date().greater(Joi.ref('from')).required,
-                        }
-                    )
+                    payload: Joi.object({
+                            from: Joi.date().min('now').required(),
+                            to: Joi.date().greater(Joi.ref('from')).required(),
+                    })
                 }
             },
             handler: (request, h) => {
