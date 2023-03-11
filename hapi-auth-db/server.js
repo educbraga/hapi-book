@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+const { configureRoutes } = require('./routes');
 
 const init = async () => {
 
@@ -10,6 +11,9 @@ const init = async () => {
     });
 
     await server.start();
+
+    await configureRoutes(server);
+    
     console.log('Server running on %s', server.info.uri);
 };
 
