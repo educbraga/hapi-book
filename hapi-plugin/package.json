@@ -1,0 +1,16 @@
+{
+  "name": "hapi-plugin",
+  "version": "1.0.0",
+  "description": "Plugin making example",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Eduardo Braga",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/basic": "^7.0.1",
+    "@hapi/hapi": "^21.3.0"
+  }
+}
