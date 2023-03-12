@@ -11,6 +11,10 @@ var authPlugin = {
 		};
 
 		module.exports.validate = async (request, username, password) => {
+
+			console.log(request, 'request')
+			console.log(username, 'username')
+			console.log(password, 'password')
 			
 			var user = users[username];
 			if (!user) {
