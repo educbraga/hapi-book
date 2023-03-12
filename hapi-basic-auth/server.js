@@ -26,10 +26,14 @@ const validate = async (request, username, password, h) => {
 
 const init = async () => {
 
-    const server = Hapi.server({ port: 4000 });
+    const server = Hapi.server({ 
+        port: 4000,
+        host: 'localhost' 
+    });
+
+    await server.start();
 
     await server.register(require('@hapi/basic'));
-
     server.auth.strategy('simple', 'basic', { validate });
     server.auth.default('simple');
 
@@ -41,8 +45,6 @@ const init = async () => {
             return 'welcome';
         }
     });
-
-    await server.start();
 
     console.log(`Server listening on ${server.info.uri}`)
 };
