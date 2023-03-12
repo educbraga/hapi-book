@@ -102,7 +102,8 @@
     "coverage": "nyc tape ./test/*.test.js && nyc check-coverage",
     "lint": "eslint lib",
     "fixlint": "eslint lib --fix",
-    "start": "node example/simple_server.js",
+    "start_simple": "node example/simple_server.js",
+    "start": "node example/server.js",
     "report": "open coverage/lcov-report/index.html"
   },
   "pre-commit": [

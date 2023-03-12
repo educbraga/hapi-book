@@ -5,6 +5,8 @@ const port        = process.env.PORT || 8000; // allow port to be set
 
 const secret = 'NeverShareYourSecret'; // Never Share This! even in private GitHub repos!
 
+// node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
+
 const people = {
     1: {
       id: 1,

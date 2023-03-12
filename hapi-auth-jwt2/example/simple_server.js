@@ -3,13 +3,12 @@ const Hapi = require('@hapi/hapi');
 const people = { // our "users database"
     1: {
       id: 1,
-      name: 'Jen Jones'
+      name: 'Edu'
     }
 };
 
 // bring your own validation function
 const validate = async function (decoded, request, h) {
-
     // do your checks to see if the person is valid
     if (!people[decoded.id]) {
       return { valid: false };
