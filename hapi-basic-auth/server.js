@@ -1,3 +1,5 @@
+'use strict'
+
 const Hapi = require('@hapi/hapi');
 
 const users = {
@@ -22,7 +24,7 @@ const validate = async (request, username, password, h) => {
     return { isValid, credentials };
 };
 
-const main = async () => {
+const init = async () => {
 
     const server = Hapi.server({ port: 4000 });
 
@@ -42,13 +44,13 @@ const main = async () => {
 
     await server.start();
 
-    return server;
+    console.log(`Server listening on ${server.info.uri}`)
 };
 
-main()
-.then((server) => console.log(`Server listening on ${server.info.uri}`))
-.catch((err) => {
+process.on('unhandledRejection', (err) => {
 
-    console.error(err);
+    console.log(err);
     process.exit(1);
 });
+
+init();
