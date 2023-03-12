@@ -15,6 +15,7 @@ const init = async () => {
     await server.register(require('@hapi/basic'));
     await server.register({plugin: Auth});
     server.auth.strategy('simple', 'basic', { validate: Auth.validate });
+    // Caso queira proteger todas as rotas, basta usar o método abaixo:
     // server.auth.default('simple');
 
     server.route({

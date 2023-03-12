@@ -8,9 +8,9 @@ var authPlugin = {
 				password: 'secret',
 				id: '2133d32a'
 			}
-		}
+		};
 
-		module.exports.validate = function (request, username, password) {
+		module.exports.validate = async (request, username, password) => {
 			
 			var user = users[username];
 			if (!user) {
@@ -23,8 +23,8 @@ var authPlugin = {
 			return { isValid: isValid, credentials: credentials };
 		}
 
-		name: 'authPlugin'
-	}
+	},
+	name: 'authPlugin'
 }
 
 module.exports = authPlugin;
