@@ -1,6 +1,6 @@
 'use strict';
 
-const hapi = require('hapi');
+const hapi = require('@hapi/hapi');
 const routes = require('./routes');
 
 const start = async () => {
