@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
-const seq = new Sequelize('pollme', 'root', 'admin', {
+const seq = new Sequelize('pollme', 'root', 'secret', {
 	host: 'localhost',
-	port: '3306',
+	port: '3309',
 	dialect: 'mysql'
 });
 
