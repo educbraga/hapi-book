@@ -1,0 +1,12 @@
+var APP_CONSTANTS = {
+	DEVELOPMENT:
+	{
+		APP_PORT: 8000
+	},
+	PRODUCTION:
+	{
+		APP_PORT: 3000
+	},
+}
+
+module.exports = APP_CONSTANTS;
