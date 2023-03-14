@@ -20,7 +20,7 @@ module.exports = [
 		handler: async function (request, h) {
 			try{
 				var allUsers = controllers.userController.fetchUsers();
-				console.log('success', allUsers);
+				console.log('success');
 				return allUsers
 			}catch(err)
 				{ throw err }
