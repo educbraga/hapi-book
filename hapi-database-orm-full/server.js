@@ -12,7 +12,7 @@ const start = async () => {
     await server.register(require('@hapi/basic'));
     await server.register({ plugin: auth });
     await server.auth.strategy('simple', 'basic', { validate: auth.validate });
-    await server.auth.default('simple');
+    // await server.auth.default('simple');
 
     await server.route(routes);
     
