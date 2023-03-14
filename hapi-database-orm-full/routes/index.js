@@ -10,7 +10,7 @@ module.exports = [
 			auth: 'simple'
 		},
 		handler: function (request, h) {
-			console.log('/');
+			console.log(h);
 			return request.auth.credentials;
 		}
 	},
