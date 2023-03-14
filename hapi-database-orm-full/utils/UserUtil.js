@@ -6,7 +6,7 @@ async function fetchUsers(){
 	try{
 		listUsers = await models.usersModel.findAll({
 			attributes: ['firstName', 'lastName']
-		});
+		})
 	}catch(err){
 		console.error(err);
 		throw err;
