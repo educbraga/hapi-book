@@ -1,12 +1,17 @@
 'use strict';
 
+var controllers = require('../controllers');
+
 module.exports = [
 	{
 		method: 'GET',
 		path: '/',
+		options: {
+			auth: 'simple'
+		},
 		handler: function (request, h) {
 			console.log('/');
-			return {message: 'Olá :)'};
+			return request.auth.credentials;
 		}
 	},
 	{
@@ -16,8 +21,11 @@ module.exports = [
 			auth: 'simple'
 		},
 		handler: function (request, h) {
-			console.log('getUsers');
-			return {user: 'Edu'};
+			try{
+				var allUsers = controllers.userController.fetchUsers();
+				console.log('success');
+				return allUsers
+			}catch(err)
+				{ throw err }
 		}
-	}
-]
+	}];
