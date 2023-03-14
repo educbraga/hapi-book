@@ -20,7 +20,7 @@ var authPlugin = {
             }
         
             const isValid = password === user.password;
-            const credentials = { id: user.id, name: user.name };
+            const credentials = { id: user.id, name: user.name, username: user.username };
         
             return { isValid, credentials };
         };
