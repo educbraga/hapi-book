@@ -1,6 +1,6 @@
 const dataTypes = require('sequelize');
 var user;
-module.exports = function(connection){
+module.exports = async function(connection){
 	// connection é a instância da conexão entre o sequelize e o banco de dados
 	user = connection.define(
 		// nome da tabela
@@ -28,5 +28,8 @@ module.exports = function(connection){
 			timestamps: false,
 		}
 	)
+
+	await user.sync();
+
 	return user;
 }
