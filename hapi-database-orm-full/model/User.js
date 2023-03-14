@@ -1,7 +1,7 @@
 const dataTypes = require('sequelize');
 var user;
 module.exports = function(connection){
-	// connection é a instância da conexão entre o sequelize e o banco de dados
+	// connection é a instância da conexão entre o sequelize e o banco de dadosº
 	user = connection.define(
 		// nome da tabela
 		'User', 
