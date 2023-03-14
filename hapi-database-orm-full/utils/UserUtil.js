@@ -4,7 +4,7 @@ async function fetchUsers(){
 	console.log("Inside utils::userUtil.js::fetchUsers");
 	var listUsers = {};
 	try{
-		listUsers = await models.User.findAll({
+		listUsers = await models.usersModel.findAll({
 			attributes: ['firstName', 'lastName']
 		});
 	}catch(err){
