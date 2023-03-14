@@ -29,7 +29,7 @@ module.exports = async function(connection){
 		}
 	)
 
-	await user.sync();
+	await user.sync({ force: true })
 
 	return user;
 }
