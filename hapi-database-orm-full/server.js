@@ -6,7 +6,7 @@ const routes = require('./routes');
 const auth = require('./auth');
 
 const start = async () => {
-	const server = hapi.server({ port: config.appConfig.DEVELOPMENT.APP_PORT, debug: { request: ['error'] } });
+	const server = hapi.server({ port: config.appConfig.DEVELOPMENT.APP_PORT });
 
 
     await server.register(require('@hapi/basic'));
@@ -15,7 +15,7 @@ const start = async () => {
     server.auth.strategy('simple', 'basic', { validate: auth.validate });
     // await server.auth.default('simple');
 
-    await server.route(routes);
+    server.route(routes);
   	await server.start();
     
   	console.log(`Server running at: ${server.info.uri}`);

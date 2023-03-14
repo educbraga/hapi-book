@@ -21,10 +21,12 @@ module.exports = function(connection){
 			lastName: {
 				type: dataTypes.STRING,
 				allowNull: false,
-			},
+			}
+		},
+		// opções
+		{
 			timestamps: false,
 		}
-		// sem opções
 	)
 	return user;
 }
