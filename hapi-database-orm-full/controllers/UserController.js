@@ -10,7 +10,7 @@ async function fetchUsers(){
 		).catch(err => {
 		console.error('Ouch', err);
 	});
-	return { users:users };
+	return users;
 }
 
 module.exports = { fetchUsers: fetchUsers };
