@@ -17,13 +17,10 @@ module.exports = [
 	{
 		method: 'GET',
 		path: '/getUsers',
-		options: {
-			auth: 'simple'
-		},
-		handler: function (request, h) {
+		handler: async function (request, h) {
 			try{
 				var allUsers = controllers.userController.fetchUsers();
-				console.log('success');
+				console.log('success', allUsers);
 				return allUsers
 			}catch(err)
 				{ throw err }
