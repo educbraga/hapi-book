@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const config = require('../config');
+usersModel:require('./User')
 
 const connection = new Sequelize(
 	config.dbConfig.DEVELOPMENT.DB_NAME, 
@@ -23,6 +24,4 @@ connection.authenticate().then(() => {
 	console.error('Unable to connect to the database:', err);
 });
 
-module.exports = {
-	usersModel:require('./User')
-}
+module.exports = function(connection)
