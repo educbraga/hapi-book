@@ -7,9 +7,9 @@ const authPlugin = {
 
         const users = {
             john: {
-                username: 'john',
+                username: 'edu',
                 password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm', // 'secret'
-                name: 'John Doe',
+                name: 'Eduardo',
                 id: '2133d32a'
             }
         };
