@@ -3,6 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const BasicAuthPlugin = require('@hapi/basic')
 const authPlugin = require('./auth');
+const { routes } = require('./routes');
 
 const app = async () => {
 
@@ -13,26 +14,7 @@ const app = async () => {
 
     server.auth.strategy('simple', 'basic', { validate: authPlugin.validate });
 
-    server.route({
-        method: 'GET',
-        path: '/',
-        handler: function (request, h) {
-
-            return 'welcome';
-        }
-    });
-
-    server.route({
-        method: 'GET',
-        path: '/restricted',
-        options: {
-            auth: 'simple'
-        },
-        handler: function (request, h) {
-            console.log(h);
-            return request.auth.credentials
-        }
-    });
+    await routes(server)
 
     await server.start();
 
