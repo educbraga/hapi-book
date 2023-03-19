@@ -1,14 +1,17 @@
+'use strict'
+
 const Hapi = require('@hapi/hapi');
-const authPlugin = require('/auth');
+const BasicAuthPlugin = require('@hapi/basic')
+const authPlugin = require('./auth');
 
-const main = async () => {
+const app = async () => {
 
-    const server = Hapi.server({ port: 3000 });
+    const server = Hapi.server({ port: 3000, host: 'localhost' });
 
-    await server.register(require('@hapi/basic'));
+    await server.register({ plugin: BasicAuthPlugin });
+    await server.register({ plugin: authPlugin });
 
-    server.auth.strategy('simple', 'basic', { validate });
-    server.auth.default('simple');
+    server.auth.strategy('simple', 'basic', { validate: authPlugin.validate });
 
     server.route({
         method: 'GET',
@@ -19,12 +22,24 @@ const main = async () => {
         }
     });
 
+    server.route({
+        method: 'GET',
+        path: '/restricted',
+        options: {
+            auth: 'simple'
+        },
+        handler: function (request, h) {
+            console.log(h);
+            return request.auth.credentials
+        }
+    });
+
     await server.start();
 
     return server;
 };
 
-main()
+app()
 .then((server) => console.log(`Server listening on ${server.info.uri}`))
 .catch((err) => {
 
