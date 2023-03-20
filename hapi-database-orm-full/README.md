@@ -1,0 +1,1 @@
+https://medium.com/@jamesjsewell/sequelize-notes-3b57fc58078
