@@ -1,5 +1,6 @@
 'use strict'
 
+require('dotenv').config();
 const Hapi = require('@hapi/hapi');
 const BasicAuthPlugin = require('@hapi/basic')
 const authPlugin = require('./auth');
@@ -7,7 +8,7 @@ const routes = require('./routes');
 
 const app = async () => {
 
-    const server = Hapi.server({ port: 3000, host: 'localhost' });
+    const server = Hapi.server({ port: process.env.APP_PORT, host: process.env.APP_HOST });
 
     await server.register({ plugin: BasicAuthPlugin });
     await server.register({ plugin: authPlugin });
