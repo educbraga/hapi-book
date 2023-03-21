@@ -17,7 +17,6 @@ const User = database.define('User', {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        timestamps: false,
 })
 
 module.exports = User;
