@@ -8,8 +8,8 @@ const models = require('../models')
 // update
 // destroy
 
-async function getAll(){
-	console.log("Inside contollers::UserController::getAll()")
+async function index(){
+	console.log("Inside contollers::UserController::index()")
 	var listUsers = {};
 	try{
 		listUsers = await models.User.findAll({attributes: ['firstName', 'lastName']});
@@ -20,5 +20,5 @@ async function getAll(){
 }
 
 module.exports = {
-	fetchUsers
+	index,
 }

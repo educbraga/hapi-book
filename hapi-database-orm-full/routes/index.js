@@ -13,9 +13,14 @@ module.exports = [
         },
         method: 'GET',
         path: '/get-users',
-        handler: function (request, h) {
-            console.log("Get Users");
-            return {user: "edu :)"}
+        handler: async function (request, h) {
+            try {
+                var allUsers = controllers.userController.fetchUsers();
+                console.log("success");
+                return allUsers;
+            }catch(error){
+                console.log("O erro é: " + error);
+            }
         }
     },
 ]
