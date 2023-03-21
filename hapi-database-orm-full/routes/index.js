@@ -15,7 +15,7 @@ module.exports = [
         path: '/get-users',
         handler: async function (request, h) {
             try {
-                var allUsers = controllers.userController.fetchUsers();
+                var allUsers = controllers.userController.index();
                 console.log("success");
                 return allUsers;
             }catch(error){
