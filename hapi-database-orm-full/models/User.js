@@ -1,7 +1,5 @@
-const Sequelize = require('sequelize');
-const database = require('../config/config.js');
-
-const User = database.define('User', {
+module.exports = (sequelize, Sequelize) => {
+  const User = sequelize.define('User', {
         id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
@@ -17,6 +15,6 @@ const User = database.define('User', {
           type: Sequelize.STRING,
           allowNull: false,
         },
-})
-
-module.exports = User;
+  })
+  return User;
+}

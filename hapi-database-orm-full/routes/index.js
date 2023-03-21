@@ -10,18 +10,14 @@ module.exports = [
         },
         handler: function (request, h) {
             console.log(h)
-            return request.auth.credentials
+            return {'message': 'Seja muito bem vindo!'};
         },
+    },
+    {
         method: 'GET',
         path: '/get-users',
         handler: async function (request, h) {
-            try {
-                var allUsers = controllers.userController.index();
-                console.log("success");
-                return allUsers;
-            }catch(error){
-                console.log("O erro é: " + error);
-            }
+            return controllers.UserController.index();
         }
     },
 ]
