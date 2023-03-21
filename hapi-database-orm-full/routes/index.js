@@ -3,20 +3,10 @@
 module.exports = [
     {
         method: 'GET',
-        path: '/',
+        path: '/getUsers',
         handler: function (request, h) {
-            return 'welcome';
+            console.log("Get Users");
+            return {user: "edu :)"}
         }
     },
-    {
-        method: 'GET',
-        path: '/restricted',
-        options: {
-            auth: 'simple'
-        },
-        handler: function (request, h) {
-            console.log(h);
-            return request.auth.credentials
-        }
-    }
 ]
