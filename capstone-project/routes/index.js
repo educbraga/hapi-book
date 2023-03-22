@@ -1,9 +1,10 @@
 'use strict';
+const joi = require('joi');
 
 var controllers = require('../controllers');
 
 module.exports = [{
-    method: 'GET',
+    method: 'POST',
     path: '/user/create',
     config: {
         description: 'Create a new user',

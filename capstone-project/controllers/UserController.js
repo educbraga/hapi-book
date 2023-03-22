@@ -1,5 +1,6 @@
 'use strict'
 
+const Boom = require('@hapi/boom')
 const models = require('../models');
 
 // index
@@ -11,7 +12,7 @@ const models = require('../models');
 // destroy
 
 async function create(firstName, lastName, password, email){
-	console.log("Inside contollers::UserController::index()")
+	console.log("Inside contollers::UserController::create()")
 	var result = {};
 	try{
 		var user = await models.User.build({
@@ -28,5 +29,5 @@ async function create(firstName, lastName, password, email){
 }
 
 module.exports = {
-	index,
+	create,
 }

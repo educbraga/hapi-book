@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 module.exports = (sequelize, Sequelize) => {
   const User = sequelize.define('User', {
       id: {
@@ -24,6 +26,7 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false,
       }
     }, {
+      timestamps: false,
       hooks: {
         beforeCreate: async (user) => {
           if (user.password && user.password != '') {
