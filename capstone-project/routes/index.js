@@ -16,9 +16,9 @@ module.exports = [
     },
     {
         method: 'GET',
-        path: '/get-users',
+        path: '/register',
         handler: async function (request, h) {
-            return controllers.UserController.index();
+            return controllers.UserController.create(request.params);
         }
     },
 ]

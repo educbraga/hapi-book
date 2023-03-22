@@ -10,16 +10,16 @@ const models = require('../models');
 // update
 // destroy
 
-async function create(){
+async function create(firstName, lastName, password, email){
 	console.log("Inside contollers::UserController::index()")
 	var result = {};
 	try{
 		var user = await models.User.build({
-			first_name: 'John',
-			last_name: 'Doe',
-			email: 'emaildojohn@gmail.com',
+			first_name: firstName,
+			last_name: lastName,
+			password: password,
+			email: email,
 		}).save()
-		await user.sync();
 		result = user.toJSON();
 	}catch(error){
 		console.log('O erro é: ', error);
