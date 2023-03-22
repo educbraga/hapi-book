@@ -10,15 +10,21 @@ const models = require('../models');
 // update
 // destroy
 
-async function index(){
+async function create(){
 	console.log("Inside contollers::UserController::index()")
-	var listUsers = {};
+	var result = {};
 	try{
-		listUsers = await models.User.findAll({attributes: ['firstName', 'lastName']});
+		var user = await models.User.build({
+			first_name: 'John',
+			last_name: 'Doe',
+			email: 'emaildojohn@gmail.com',
+		}).save()
+		await user.sync();
+		result = user.toJSON();
 	}catch(error){
 		console.log('O erro é: ', error);
 	}
-	return listUsers;
+	return result;
 }
 
 module.exports = {
