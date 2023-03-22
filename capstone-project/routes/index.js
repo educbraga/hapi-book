@@ -18,6 +18,6 @@ module.exports = [{
         }
     },
     handler: async function(request, h) {
-            await controllers.UserController.create(request.payload.firstName, request.payload.lastName, request.payload.password, request.payload.email);
+        return await controllers.UserController.create(request.payload.firstName, request.payload.lastName, request.payload.password, request.payload.email);
     },
 }, ]
