@@ -2,23 +2,22 @@
 
 var controllers = require('../controllers');
 
-module.exports = [
-    {
-        method: 'GET',
-        path: '/',
-        options: {
-            auth: 'simple',
-        },
-        handler: function (request, h) {
-            console.log(h)
-            return {'message': 'Seja muito bem vindo!'};
-        },
-    },
-    {
-        method: 'GET',
-        path: '/register',
-        handler: async function (request, h) {
-            return controllers.UserController.create(request.params);
+module.exports = [{
+    method: 'GET',
+    path: '/user/create',
+    config: {
+        description: 'Create a new user',
+        tags: ['api', 'users'],
+        validate: {
+            payload: joi.object({
+                firstName: joi.string().required(),
+                lastName: joi.string().required(),
+                password: joi.string().required(),
+                email: joi.string().email({multiple:true}).required(),
+            })
         }
     },
-]
+    handler: async function(request, h) {
+            await controllers.UserController.create(request.payload.firstName, request.payload.lastName, request.payload.password, request.payload.email);
+    },
+}, ]
