@@ -10,7 +10,8 @@ const models = require('../models');
 // update
 // destroy
 
-async function index(firstName, email) {
+async function show(firstName, email) {
+  console.log("Inside contollers::UserController::show()")
   try {
     if (email == "") {
       users = await models.user.findAll({
@@ -63,4 +64,5 @@ async function create(firstName, lastName, password, email) {
 
 module.exports = {
   create,
+  show,
 }
