@@ -10,40 +10,41 @@ const models = require('../models');
 // update
 // destroy
 
-async function show(firstName, email) {
-  console.log("Inside contollers::UserController::show()")
-  try {
-    if (email == "") {
-      users = await models.user.findAll({
-        attributes: ["firstName", "lastName", "email"],
-        where: {
-          firstName: {
-            [Op.like]: firstName
-          }
-        }
-      })
-    } else if (email != "") {
-      users = await models.user.findAll({
-        attributes: ["firstName", "lastName", "email"],
-        where: {
-          [Op.and]: [
-            {
-              firstName: {
-                [Op.like]: firstName
-              }
-            }, {
-              email: email
-            }
-          ]
-        }
-      })
-    }
-  } catch (error) {
-    console.log("error", error);
-    throw error
-  }
-  return { users }
-}
+// Tem algo errado aqui. Acho que o sequelize não funciona mais assim
+// async function show(firstName, email) {
+//   console.log("Inside contollers::UserController::show()")
+//   try {
+//     if (email == "") {
+//       users = await models.user.findAll({
+//         attributes: ["firstName", "lastName", "email"],
+//         where: {
+//           firstName: {
+//             [Op.like]: firstName
+//           }
+//         }
+//       })
+//     } else if (email != "") {
+//       users = await models.user.findAll({
+//         attributes: ["firstName", "lastName", "email"],
+//         where: {
+//           [Op.and]: [
+//             {
+//               firstName: {
+//                 [Op.like]: firstName
+//               }
+//             }, {
+//               email: email
+//             }
+//           ]
+//         }
+//       })
+//     }
+//   } catch (error) {
+//     console.log("error", error);
+//     throw error
+//   }
+//   return { users }
+// }
 
 async function create(firstName, lastName, password, email) {
   console.log("Inside contollers::UserController::create()")
