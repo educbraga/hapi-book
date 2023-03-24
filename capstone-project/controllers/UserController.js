@@ -10,7 +10,9 @@ const models = require('../models');
 // update
 // destroy
 
-// Tem algo errado aqui. Acho que o sequelize não funciona mais assim
+// Tem algo errado aqui. O show não está funcionando. Estou muito cansado para continuar com este livro.
+// Vou tentar resolver isso no futuro, mas por enquanto, vou seguir em frente.
+// Irei ver a masterclass de sequelize do Diego Fernandes.
 // async function show(firstName, email) {
 //   console.log("Inside contollers::UserController::show()")
 //   try {
