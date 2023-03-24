@@ -10,6 +10,16 @@ const models = require('../models');
 // update
 // destroy
 
+async function index(firstName, lastName) {
+  try{
+    var users = await models.User.findAll({attributes: ["first_name", "last_name"],})
+  } catch (error) {
+    console.log("error", error);
+    throw error
+  }
+  return users
+}
+
 // Tem algo errado aqui. O show não está funcionando. Estou muito cansado para continuar com este livro.
 // Vou tentar resolver isso no futuro, mas por enquanto, vou seguir em frente.
 // Irei ver a masterclass de sequelize do Diego Fernandes.
