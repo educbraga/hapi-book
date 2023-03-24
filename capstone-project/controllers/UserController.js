@@ -39,6 +39,7 @@ async function index(firstName, email) {
     }
   } catch (error) {
     console.log("error", error);
+    throw error
   }
   return { users }
 }
