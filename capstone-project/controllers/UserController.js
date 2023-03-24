@@ -20,41 +20,6 @@ async function index() {
   return users
 }
 
-// async function show(firstName, email) {
-//   console.log("Inside contollers::UserController::show()")
-//   try {
-//     if (email == "") {
-//       users = await models.user.findAll({
-//         attributes: ["firstName", "lastName", "email"],
-//         where: {
-//           firstName: {
-//             [Op.like]: firstName
-//           }
-//         }
-//       })
-//     } else if (email != "") {
-//       users = await models.user.findAll({
-//         attributes: ["firstName", "lastName", "email"],
-//         where: {
-//           [Op.and]: [
-//             {
-//               firstName: {
-//                 [Op.like]: firstName
-//               }
-//             }, {
-//               email: email
-//             }
-//           ]
-//         }
-//       })
-//     }
-//   } catch (error) {
-//     console.log("error", error);
-//     throw error
-//   }
-//   return { users }
-// }
-
 async function create(firstName, lastName, password, email) {
   console.log("Inside contollers::UserController::create()")
   var result = {};
@@ -71,6 +36,41 @@ async function create(firstName, lastName, password, email) {
   }
   return result;
 }
+
+// async function show(firstName, email) {
+//   console.log("Inside contollers::UserController::show()")
+//   try {
+//     if (email == "") {
+//       users = await models.user.findAll({
+//         attributes: ["firstName", "lastName", "email"],
+//         where: {
+//           firstName: {
+//             [Op.like]: firstName;
+//           }
+//         }
+//       })
+//     } else if (email != "") {
+//       users = await models.user.findAll({
+//         attributes: ["firstName", "lastName", "email"],
+//         where: {
+//           [Op.and]: [
+//             {
+//               firstName: {
+//                 [Op.like]: firstName;
+//               }
+//             }, {
+//               email: email
+//             }
+//           ]
+//         }
+//       })
+//     }
+//   } catch (error) {
+//     console.log("error", error);
+//     throw error
+//   }
+//   return { users }
+// }
 
 module.exports = {
   create,
