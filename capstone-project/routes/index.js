@@ -34,5 +34,10 @@ module.exports = [
     return await controllers.UserController.create(request.payload.firstName, request.payload.lastName, request.payload.password, request.payload.email);
   },
 }, 
-
+{
+    method: 'GET',
+    path: '/get-users/{firstName}/{email}',
+    handler: async function (request, h) {
+        return controllers.UserController.show(request.params.firstName, request.params.email);
+}
 ]
