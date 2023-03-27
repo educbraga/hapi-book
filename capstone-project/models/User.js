@@ -26,7 +26,6 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false,
       }
     }, {
-      timestamps: false,
       hooks: {
         beforeCreate: async (user) => {
           if (user.password && user.password != '') {

@@ -39,5 +39,6 @@ module.exports = [
     path: '/get-users/{firstName}/{email}',
     handler: async function (request, h) {
         return controllers.UserController.show(request.params.firstName, request.params.email);
+    }
 }
 ]

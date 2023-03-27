@@ -25,9 +25,16 @@ module.exports = {
       password: {
         type: Sequelize.STRING,
         allowNull: false,
-      }
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
     }, {
-      timestamps: false,
       hooks: {
         beforeCreate: async (user) => {
           if (user.password && user.password != '') {
